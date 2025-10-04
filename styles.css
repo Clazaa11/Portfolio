@@ -1,0 +1,153 @@
+/* Author: Clarence Mendoza
+Block: CYB - 201
+Date: October 4, 2025 */
+
+:root {
+    --nav-height: 60px;
+    --nav-bg: #0f172a;
+    --welcome-bg: #e0f2fe;
+    --projects-bg: #fef3c7;
+    --contact-bg: #ecfdf5;
+    --card: #ffffff;
+    --accent: #0ea5e9;
+    --text-dark: #0f172a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: var(--welcome-bg);
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background: var(--nav-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1000;
+}
+
+#navbar nav {
+    display: flex;
+    gap: 1rem;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+#navbar a:hover {
+    color: var(--accent);
+}
+
+#navbar a:focus {
+    outline: 3px solid #ffcc00;
+    border-radius: 4px;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background: var(--welcome-bg);
+}
+
+#projects {
+    padding: 2rem 1rem;
+    background: var(--projects-bg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.project-tile {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.06);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-tile:hover {
+    transform: translateY(-4px);
+}
+
+.project-tile img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+}
+
+.project-link {
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-link:focus {
+    outline: 3px solid #ffd166;
+    border-radius: 4px;
+}
+
+#contact {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: var(--contact-bg);
+}
+
+#contact a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding-top: calc(var(--nav-height) + 1rem);
+}
+
+@media (max-width: 600px) {
+    #navbar {
+        justify-content: center;
+    }
+
+    #navbar nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
